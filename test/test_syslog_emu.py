@@ -2,13 +2,12 @@
 
 # -*- coding: utf-8 -*-
 
-import unittest
 import sys
-import logging
-
 sys.path.insert(1, 'lib')
-
 import syslog
+
+import unittest
+import logging
 
 
 
