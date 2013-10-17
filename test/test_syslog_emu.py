@@ -11,6 +11,7 @@ sys.path.insert(1, 'lib')
 import syslog
 
 
+
 class MemoryLogHandler(logging.Handler):
 	def __init__(self):
 		logging.Handler.__init__(self)
@@ -57,6 +58,7 @@ class TestOneMessage(unittest.TestCase):
 
 if __name__ == '__main__':
 	print sys.path	#: show content of path for reference
+	print syslog
 	unittest.main()
 # <<< if __name__ == '__main__':
 
