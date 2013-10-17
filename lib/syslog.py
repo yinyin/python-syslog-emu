@@ -121,5 +121,15 @@ def syslog(*args):
 # ### def syslog
 
 
+def closelog():
+	pass
+# ### def closelog
+
+
+def setlogmask(maskpri):
+	pass
+# ### def setlogmask
+
+
 
 # vim: ts=4 sw=4 ai nowrap
