@@ -2,12 +2,12 @@
 
 # -*- coding: utf-8 -*-
 
-import sys
-sys.path.insert(1, 'lib')
-import syslog
-
 import unittest
 import logging
+import os
+import imp
+
+syslog = imp.load_source("syslog", os.path.join("lib", "syslog.py"))
 
 
 
@@ -56,8 +56,6 @@ class TestOneMessage(unittest.TestCase):
 
 
 if __name__ == '__main__':
-	print sys.path	#: show content of path for reference
-	print syslog
 	unittest.main()
 # <<< if __name__ == '__main__':
 
