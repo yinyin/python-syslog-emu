@@ -56,6 +56,7 @@ class TestOneMessage(unittest.TestCase):
 
 
 if __name__ == '__main__':
+	print sys.path	#: show content of path for reference
 	unittest.main()
 # <<< if __name__ == '__main__':
 
