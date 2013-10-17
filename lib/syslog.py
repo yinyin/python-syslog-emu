@@ -26,16 +26,16 @@ MASK_PRIORITY = 0x07
 # }}} Priorities
 
 # {{{ Facilities
-LOG_KERN = (0 << 3)	#: kernel messages
-LOG_USER = (1 << 3)	#: random user-level messages
-LOG_MAIL = (2 << 3)	#: mail system
-LOG_DAEMON = (3 << 3)	#: system daemons
-LOG_AUTH = (4 << 3)	#: security/authorization messages
-LOG_LPR = (5 << 3)	#: line printer subsystem
-LOG_NEWS = (6 << 3)	#: network news subsystem
-LOG_UUCP = (7 << 3)	#: UUCP subsystem
-LOG_CRON = (8 << 3)	#: clock daemon
-LOG_SYSLOG = (9 << 3)	#: messages generated internally by syslogd
+LOG_KERN = (1 << 3)	#: kernel messages
+LOG_USER = (2 << 3)	#: random user-level messages
+LOG_MAIL = (3 << 3)	#: mail system
+LOG_DAEMON = (4 << 3)	#: system daemons
+LOG_AUTH = (5 << 3)	#: security/authorization messages
+LOG_LPR = (6 << 3)	#: line printer subsystem
+LOG_NEWS = (7 << 3)	#: network news subsystem
+LOG_UUCP = (8 << 3)	#: UUCP subsystem
+LOG_CRON = (9 << 3)	#: clock daemon
+LOG_SYSLOG = (10 << 3)	#: messages generated internally by syslogd
 
 LOG_LOCAL0 = (16 << 3)	#: reserved for local use
 LOG_LOCAL1 = (17 << 3)	#: reserved for local use
@@ -67,7 +67,7 @@ LOG_PERROR = 0x20	#: log to stderr as well
 
 
 
-def openlog(ident=None, logoption=0, facility=-1):
+def openlog(ident=None, logoption=0, facility=0x3F8):
 	global _log
 	global _default_facility_text
 
