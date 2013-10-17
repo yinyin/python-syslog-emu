@@ -39,7 +39,7 @@ class TestOneMessage(unittest.TestCase):
 		syslog.openlog("test1", syslog.LOG_PID | syslog.LOG_PERROR)
 		syslog.syslog(syslog.LOG_CRIT, "message for test1")
 
-		self.assertEqual(self.hdlr.message_buffer[0], "hello")
+		self.assertEqual(self.hdlr.message_buffer[0], "CRITICAL:test1:[user] message for test1")
 
 
 
