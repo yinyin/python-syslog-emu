@@ -32,14 +32,26 @@ class TestOneMessage(unittest.TestCase):
 		root_logger = logging.getLogger()
 		root_logger.addHandler(self.hdlr)
 		root_logger.setLevel(logging.DEBUG)
+	# ### def setUp
 	def tearDown(self):
 		root_logger = logging.getLogger()
 		root_logger.removeHandler(self.hdlr)
+	# ### def tearDown
+
 	def test_debug(self):
 		syslog.openlog("test1", syslog.LOG_PID | syslog.LOG_PERROR)
 		syslog.syslog(syslog.LOG_CRIT, "message for test1")
 
 		self.assertEqual(self.hdlr.message_buffer[0], "CRITICAL:test1:[user] message for test1")
+	# ### def test_debug
+
+	def test_info(self):
+		syslog.openlog("test1", syslog.LOG_PID | syslog.LOG_PERROR)
+		syslog.syslog(syslog.LOG_INFO, "message for test1 info")
+
+		self.assertEqual(self.hdlr.message_buffer[0], "INFO:test1:[user] message for test1 info")
+	# ### def test_info
+# ### class TestOneMessage
 
 
 
